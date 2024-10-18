@@ -2,8 +2,10 @@ import flask
 from flask import request, jsonify
 from quote import getonequote
 import json
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 @app.route('/getonequote')
 
@@ -28,4 +30,4 @@ def page_not_found(e):
 
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
