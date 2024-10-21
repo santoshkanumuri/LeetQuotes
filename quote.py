@@ -34,8 +34,8 @@ def getonequote(slug_name):
   print(question)
   chat_session = connect_ai()
   question = f'''Given the following problem description from LeetCode: {question}, provide two things in a JSON format:
-
-A concise, simple or motivational or love or life or quirky quote-like hint that guides the programmer towards solution of the problem that describes the key idea to solve the problem.
+  Analyze the problem given, what is the main requirement for output and understand the requirements and then build an optimal solution that can handle edge cases, and large data entry for this question. now form solution steps to solve
+  this question. then from solution steps generate a concise, simple or motivational or love or life or quirky quote-like hint that guides the programmer towards solution of the problem that describes the key idea to solve the problem.
 A step-by-step breakdown of the solution approach in a clear and simple manner.
 structure your output clearly in a json format and should contain two fields: 'quote' and 'solution'. Ensure the hint offers key insights into the problem-solving approach, while the solution provides clear steps for implementation'''
   response = chat_session.send_message(question)
